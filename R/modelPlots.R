@@ -751,6 +751,7 @@ roc_plot <- function(probability_list,
                      file_path = NULL,
                      file_name = "ROC_plot",
                      file_type = "pdf",
+                     ncol=3,
                      plot_width = 7,
                      plot_height = 7,
                      dpi = 80) {
@@ -877,7 +878,7 @@ roc_plot <- function(probability_list,
       )
   } else {
     rocplots1 <- rocplots +
-      ggplot2::facet_wrap(~method) +
+      ggplot2::facet_wrap(~method,ncol=ncol) +
       promor_facet_theme() +
       ggplot2::theme(
         text = element_text(size = text_size),
